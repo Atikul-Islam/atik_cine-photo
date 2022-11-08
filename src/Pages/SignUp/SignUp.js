@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/Authprovider';
 
 const SignUp = () => {
-    const {createUser} = useContext(AuthContext)
+    const {createUser, signInWithGoogle} = useContext(AuthContext);
     // console.log(createUser);
     const handleSignUp = event =>{
         event.preventDefault();
@@ -21,13 +21,22 @@ const SignUp = () => {
         .catch(error => console.log(error));
     }
 
+    const handleGoogleSignIn = () =>{
+        signInWithGoogle()
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error => console.error(error));
+    }
+
   return (
-    <div className="hero mb-10">
+    <div className="hero mb-5">
       <div className="hero-content flex-col ">
-        <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold mb-5">Login now!</h1>
-        </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+        <div className="text-center">
+          <h1 className="text-5xl text-center font-bold">Login now!</h1>
+        </div>
           <form onSubmit={handleSignUp} className="card-body">
             <div className="form-control">
               <label className="label">
@@ -68,7 +77,7 @@ const SignUp = () => {
                 <span className="label-text">Password</span>
               </label>
               <input
-                type="text"
+                type="password"
                 name="password"
                 placeholder="password"
                 className="input input-bordered"
@@ -79,6 +88,7 @@ const SignUp = () => {
               <button className="btn btn-primary">Sign Up</button>
             </div>
           </form>
+          <button onClick={handleGoogleSignIn} className="btn btn-success mb-5">SignUp With Google</button>
           <p className="px-5 mb-5">Have an account? <Link className="text-primary" to="/login">Log In</Link> </p>
         </div>
       </div>
