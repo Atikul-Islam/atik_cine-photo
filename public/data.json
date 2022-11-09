@@ -1,44 +1,44 @@
 [
    {
-      "id": 1,
-      "name": "Push Up",
-      "price": 30,
-      "description": "Push Up is a common calisthenics exercise beginning from the prone position. By raising and lowering the body using the arms, push-ups exercise the pectoral muscles, triceps.",
-      "pic": "https://ibb.co/hgDFt63"
+      "s_id": 1,
+      "name": "Wedding Photography",
+      "price": 30000,
+      "description": "Finding that one person that you want to grow old with and share all of life’s ups and downs with, deserves to be remembered. Often in life, we forget to slow down and take the time to really appreciate and memorialize the moments we are experiencing as we’re in them. Sharing your life with someone is one of the most vulnerable and intimate things that we, as humans, can do. Celebrate the simple beauty of growing together, because one day, you will cherish being able to look back on the beginning of it all.",
+      "pic": "https://i.ibb.co/fX4dPgj/galary1.webp"
    },
    {
-      "id": 2,
-      "name": "Squats",
-      "price": 40,
-      "description": "Squats burn calories and might help you lose weight. They also lower your chances of injuring your knees and ankles.",
-      "pic": "https://ibb.co/DQCbcSw"
+      "s_id": 2,
+      "name": "Wedding Cinematography",
+      "price": 60000,
+      "description": "My wedding Cinematography style is modern and artistic. I combine wedding photo-journalism with photographic art. As a wedding photographer in Bangladesh [ BD ] I do much more than a simple coverage of the event - I interpret what the wedding means for you. I am a Bangladeshi Photographer and speak fluent Bangla and English. As such you can trust me to be at ease with you in BD dealing with photography with multi-cultural wedding guests.",
+      "pic": "https://i.ibb.co/QQr4DYG/beautiful-model-girl-white-dress-man-suit.jpg"
    },
    {
-      "id": 3,
-      "name": "Plank",
-      "price": 10,
-      "description": "The plank is an isometric core strength exercise that involves maintaining a position similar to a push-up for the maximum possible time.",
-      "pic": "hhttps://ibb.co/mT63Nh7"
+      "s_id": 3,
+      "name": "Birthday Photography",
+      "price": 10000,
+      "description": "A birthday is the anniversary of the birth of a person, or figuratively of an institution. Birthdays of people are celebrated in numerous cultures, often with birthday gifts, birthday cards, a birthday party, or a rite of passage. Many religions celebrate the birth of their founders or religious figures with special holidays (e.g. Christmas, Mawlid, Buddha's Birthday, and Krishna Janmashtami). There is a distinction between birthday and birthdate: the former, except for February 29, occurs each year (e.g. January 15), while the latter is the complete date when a person was born.",
+      "pic": "https://i.ibb.co/hB1d0ss/birthday1.jpg"
    },
    {
-      "id": 4,
-      "name": "Ab crunches",
-      "price": 30,
-      "description": "The crunch is an abdominal exercise that works the rectus abdominis muscle.[1] It enables both building \"six-pack\" abs and tightening the belly.",
-      "pic": "https://ibb.co/hgDFt63"
+      "s_id": 4,
+      "name": "Birthday Cinematography",
+      "price": 20000,
+      "description": "We are the in-between generation. We remember using cassettes as well as downloading iTunes for the first time. We remember taking disposable film cameras on school trips along with taking hundreds of photos on our iPhones. We also remember using the family atlas that still showed Germany as two countries to research a project, as well as printing out a Wikipedia page and hoping the teacher wouldn’t notice the hyperlinks we forgot to take out.",
+      "pic": "https://i.ibb.co/pRGQCz1/birthday2.jpg"
    },
    {
-      "id": 5,
-      "name": "Side Bends",
-      "price": 20,
-      "description": "Side bend or Side bending , translated as side bend , is an exercise used in many activities with weights.",
-      "pic": "https://image.shutterstock.com/image-photo/sporty-young-man-training-gym-600w-1579727410.jpg"
+      "s_id": 5,
+      "name": "Fashion Photography",
+      "price": 20000,
+      "description": "Fashion photography is a genre of photography which is devoted to displaying clothing and other fashion items. Fashion photography is most often conducted for advertisements or fashion magazines such as Vogue, Vanity Fair, or Elle. It has grown into becoming a necessary way for designers to get their work out to the public. Fashion photography has developed its own aesthetic in which the clothes and fashions are enhanced by the presence of exotic locations or accessories.",
+      "pic": "https://i.ibb.co/tDshjWY/fashionable-pale-brunette-long-green-dress-black-jacket-sunglasses-standing-street-during-daytime-ag.jpg"
    },
    {
-      "id": 6,
-      "name": "Sprinting",
-      "price": 50,
-      "description": "Sprinting is running over a short distance at the top-most speed of the body in a limited period of time. It is used in many sports that incorporate running, typically as a way of quickly reaching a target or goal...",
-      "pic": "https://image.shutterstock.com/image-photo/istanbul-turkey-february-06-2021-600w-1916129968.jpg"
+      "s_id": 6,
+      "name": "Fashion Cinematography",
+      "price": 50000,
+      "description": "Fashion photography has been in existence since the earliest days of photography. The first photograph taken on camera was made by Niépce in 1826.[1] In 1856, Adolphe Braun published a book containing 288 photographs of Virginia Oldoini, Countess di Castiglione, a Tuscan noblewoman at the court of Napoleon III. The photos depict her in her official court garb, making her the first fashion model. In the first decade of the 20th century, advances in halftone printing allowed fashion photographs to be used in magazines, which caused fashion magazines to become popular subscriptions in the United States. Fashion photography made its first appearance in French and American magazines such as La mode pratique and Harper's Bazaar.",
+      "pic": "https://i.ibb.co/hDBWvCB/portrait-young-girl-red-beret-painting-her-lips-with-bright-lipstick-pink-background.jpg"
    }
 ]
