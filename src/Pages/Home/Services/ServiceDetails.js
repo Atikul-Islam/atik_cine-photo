@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../../contexts/AuthProvider/Authprovider";
+import Reviews from "./Reviews";
 
 const ServiceDetails = () => {
+
   const service = useLoaderData();
   const { name, pic, price, description } = service;
   console.log(pic, description);
@@ -17,6 +20,7 @@ const ServiceDetails = () => {
           <p>{description}</p>
         </div>
       </div>
+      <Reviews></Reviews>
     </div>
   );
 };
