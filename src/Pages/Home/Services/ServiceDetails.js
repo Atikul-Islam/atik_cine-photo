@@ -1,13 +1,16 @@
-import React, { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/Authprovider";
 import Reviews from "./Reviews";
 
 const ServiceDetails = () => {
-
   const service = useLoaderData();
-  const { name, pic, price, description } = service;
+
+  const {_id, name, pic, price, description } = service;
   console.log(pic, description);
+
+
+
   return (
     <div>
       <div className="card w-96 bg-base-100 shadow-xl">
@@ -21,6 +24,7 @@ const ServiceDetails = () => {
         </div>
       </div>
       <Reviews></Reviews>
+
     </div>
   );
 };

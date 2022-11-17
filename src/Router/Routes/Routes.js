@@ -3,10 +3,12 @@ import Main from "../../Layout/Main";
 import Blog from "../../Pages/Blog/Blog";
 import About from "../../Pages/Home/About/About";
 import Home from "../../Pages/Home/Home/Home";
+import ClientReviews from "../../Pages/Home/Services/ClientReviews/ClientReviews";
 import ServiceDetails from "../../Pages/Home/Services/ServiceDetails";
 import Services from "../../Pages/Home/Services/Services";
 import Login from "../../Pages/Login/Login";
 import SignUp from "../../Pages/SignUp/SignUp";
+import PrivateRoutes from "./PrivateRoutes";
 
 
 const router = createBrowserRouter([
@@ -45,6 +47,10 @@ const router = createBrowserRouter([
           path: '/signup',
           element: <SignUp></SignUp>
         },
+        {
+          path: '/clientreviews',
+          element: <PrivateRoutes><ClientReviews></ClientReviews></PrivateRoutes>
+        }
       ]
     }
   ])

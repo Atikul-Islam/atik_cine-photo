@@ -1,26 +1,28 @@
-import React from 'react';
+import React from "react";
 
-const Review = () => {
-    return (
-        <div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Reviews</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <td>
-                        <h1>name</h1>
-                    </td>
-                    <td>
-                        <h1>message</h1>
-                    </td>
-                </tbody>
-            </table>
-        </div>
-    );
+const Review = ({ review }) => {
+  const { photo, name, comment } = review;
+  return (
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Reviews</th>
+          </tr>
+        </thead>
+        <tbody>
+          <td>
+            <div className="mask mask-squircle w-12 h-12">
+              <img src={photo} alt="Img" />
+            </div>
+            <div className="font-bold">{name}</div>
+          </td>
+          <td>{comment}</td>
+        </tbody>
+      </table>
+    </div>
+  );
 };
 
 export default Review;
