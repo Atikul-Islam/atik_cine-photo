@@ -13,6 +13,21 @@ const ClientReviews = () => {
           .then(data => setClientReviews(data))
   }, [user?.email])
 
+  const deleteReview = (id) => {
+
+    fetch(`http://localhost:5000/reviews/${id}`, {
+        method: 'DELETE',
+    })
+        .then(res => res.json())
+        .then(data => {
+
+            if (data.deleteCdount > 0) {
+                const remaining = clientReviews.filter(rv => rv._id !== id)
+                setClientReviews(remaining)
+            }
+        })
+
+}
 
   return (
     <div className='min-h-screen '>
@@ -23,7 +38,7 @@ const ClientReviews = () => {
         <h1 className='text-3xl font-extrabold  text-center my-4'>Here Is Your Reviews!!!</h1>
     }
     {
-        clientReviews?.map(clientReview => <ClientReview key={clientReview._id} clientReview={clientReview}></ClientReview>)
+        clientReviews?.map(clientReview => <ClientReview key={clientReview._id} deleteReview={deleteReview} clientReview={clientReview}></ClientReview>)
     }
 </div>
   );

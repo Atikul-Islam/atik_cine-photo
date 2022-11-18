@@ -1,7 +1,7 @@
 import React from "react";
 
-const ClientReview = ({clientReview}) => {
-  const {name, comment} = clientReview
+const ClientReview = ({clientReview, deleteReview}) => {
+  const {_id,name, comment} = clientReview
   return (
     <div className="overflow-x-auto w-full  mt-5">
       <table className="lg:table w-full">
@@ -22,6 +22,9 @@ const ClientReview = ({clientReview}) => {
           </tr>
         </tbody>
       </table>
+      <div className='text-center'>
+                <button onClick={() => deleteReview(_id)} className="btn btn-primary btn-xs">Delete Review</button>
+            </div>
     </div>
   );
 };
