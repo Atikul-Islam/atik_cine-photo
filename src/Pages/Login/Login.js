@@ -1,24 +1,26 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/Authprovider";
 
 const Login = () => {
     const {signIn} = useContext(AuthContext);
+    const [errorMessage, setErrorMessage] = useState('')
     const handleLogin = event =>{
         event.preventDefault();
         const form = event.target;
         const email =form.email.value;
         const password = form.password.value;
-        console.log(email,password);
 
         signIn(email, password)
         .then(result =>{
             const user = result.user;
-            console.log(user);
-            form.reset();
+            console.log(user)
+            setErrorMessage('')
+            form.reset()
         })
-        .catch(error => console.log(error));
+        .catch(error => setErrorMessage(error.message));
     }
+    
 
   return (
     <div className="hero mb-10">
@@ -49,6 +51,7 @@ const Login = () => {
                 placeholder="password"
                 className="input input-bordered"
               />
+              <p className="text-red-500">{errorMessage}</p>
               <label className="label">
                 <a href="/" className="label-text-alt link link-hover">
                   Forgot password?

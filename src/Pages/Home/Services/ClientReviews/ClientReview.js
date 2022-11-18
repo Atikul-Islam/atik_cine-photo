@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ClientReview = ({clientReview, deleteReview}) => {
   const {_id,name, comment} = clientReview
@@ -23,8 +24,9 @@ const ClientReview = ({clientReview, deleteReview}) => {
         </tbody>
       </table>
       <div className='text-center'>
-                <button onClick={() => deleteReview(_id)} className="btn btn-primary btn-xs">Delete Review</button>
-            </div>
+        <Link to={`/updatereview/${_id}`}><button className="btn btn-primary btn-xs">Edit Review</button></Link>
+        <button onClick={() => deleteReview(_id)} className="btn btn-primary btn-xs">Delete Review</button>
+      </div>
     </div>
   );
 };

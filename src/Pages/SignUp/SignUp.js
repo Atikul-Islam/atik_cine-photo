@@ -1,24 +1,39 @@
-import React, { useContext } from 'react';
+
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/Authprovider';
 
 const SignUp = () => {
-    const {createUser, signInWithGoogle} = useContext(AuthContext);
+    const {createUser, signInWithGoogle, updateUser} = useContext(AuthContext);
+    const [errorMessage, setErrorMessage] = useState('');
     // console.log(createUser);
     const handleSignUp = event =>{
         event.preventDefault();
         const form = event.target;
+        const name = form.name.value;
         const email =form.email.value;
         const photo = form.photo.value;
         const password = form.password.value;
         
-        createUser(email, photo, password)
+        createUser(email, password)
         .then(result =>{
             const user = result.user;
             console.log(user);
+            setErrorMessage('');
+            handleUpdateUser(name, photo)
             form.reset();
         })
-        .catch(error => console.log(error));
+        .catch(error => setErrorMessage(error.message));
+    }
+
+    const handleUpdateUser = (name, photo) => {
+      const profile = {
+        displayName: name,
+        photoUrl: photo
+      }
+      updateUser(profile)
+        .then(() => {})
+        .catch(errorMessage => setErrorMessage(errorMessage.message))
     }
 
     const handleGoogleSignIn = () =>{
@@ -27,7 +42,7 @@ const SignUp = () => {
             const user = result.user;
             console.log(user);
         })
-        .catch(error => console.error(error));
+        .catch(error => setErrorMessage(error.message));
     }
 
   return (
@@ -84,6 +99,7 @@ const SignUp = () => {
                 required
               />
             </div>
+            <p className='text-red-500'>{errorMessage}</p>
             <div className="form-control mt-6">
               <button className="btn btn-primary">Sign Up</button>
             </div>
