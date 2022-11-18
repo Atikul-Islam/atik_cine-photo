@@ -9,14 +9,14 @@ const ServiceDetails = () => {
   const service = useLoaderData();
   const [reviews, setReviews] = useState([]);
   const [loader, setLoader] = useState(true);
-  const {_id, name, pic, price, description } = service;
+  const {s_id, name, pic, price, description } = service;
   console.log(pic, description);
 
   useEffect( () => {
-    fetch(`http://localhost:5000/reviews/${_id}`)
+    fetch(`http://localhost:5000/reviews/${s_id}`)
           .then(res => res.json())
           .then(data => setReviews(data))
-  },[_id,loader])
+  },[s_id,loader])
 
   const handleReview = event => {
     event.preventDefault();
@@ -67,7 +67,7 @@ const ServiceDetails = () => {
       <div >
                 {
                     user ? <div className="mt-8 mb-20">
-                        <h1 className='text-center font-bold text-3xl mb-4'>Add Your Review</h1>
+                        <h1 className='text-start font-bold text-3xl mb-4'>Add Your Review</h1>
                         <form onSubmit={handleReview}>
                             <textarea name='message' className="textarea textarea-bordered w-full" placeholder="Type what you wanna say" required></textarea>
                             <div className="text-center mt-2">  <button className="btn btn-primary " type='submit'>Add Review</button>

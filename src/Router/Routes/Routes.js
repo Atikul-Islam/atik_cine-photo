@@ -3,6 +3,7 @@ import Main from "../../Layout/Main";
 import Blog from "../../Pages/Blog/Blog";
 import About from "../../Pages/Home/About/About";
 import Home from "../../Pages/Home/Home/Home";
+import AddService from "../../Pages/Home/Services/AddService";
 import ClientReviews from "../../Pages/Home/Services/ClientReviews/ClientReviews";
 import UpdateClientReview from "../../Pages/Home/Services/ClientReviews/UpdateClientReview";
 import ServiceDetails from "../../Pages/Home/Services/ServiceDetails";
@@ -55,6 +56,11 @@ const router = createBrowserRouter([
         {
           path: '/updatereview/:id',
           element: <UpdateClientReview></UpdateClientReview>
+        },
+        {
+          path: '/addservice',
+          element: <PrivateRoutes><AddService></AddService></PrivateRoutes>,
+          loader: () => fetch('http://localhost:5000/services')
         }
       ]
     }
