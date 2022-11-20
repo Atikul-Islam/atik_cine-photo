@@ -8,14 +8,14 @@ const ClientReviews = () => {
   const [clientReviews, setClientReviews] = useState([]);
 
   useEffect(() => {
-      fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+      fetch(`https://assignment11-node-mongodb-server.vercel.app/reviews?email=${user?.email}`)
           .then(res => res.json())
           .then(data => setClientReviews(data))
   }, [user?.email])
 
   const deleteReview = (id) => {
 
-    fetch(`http://localhost:5000/reviews/${id}`, {
+    fetch(`https://assignment11-node-mongodb-server.vercel.app/reviews/${id}`, {
         method: 'DELETE',
     })
         .then(res => res.json())

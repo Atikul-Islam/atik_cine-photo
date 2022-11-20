@@ -10,7 +10,7 @@ const UpdateClientReview = () => {
         e.preventDefault()
         const form = e.target;
         const comment = form.comment.value;
-        fetch(`http://localhost:5000/reviews/${id}`, {
+        fetch(`https://assignment11-node-mongodb-server.vercel.app/reviews/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

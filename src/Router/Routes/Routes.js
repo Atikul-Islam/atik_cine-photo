@@ -21,17 +21,17 @@ const router = createBrowserRouter([
         {
           path: '/',
           element: <Home></Home>,
-          loader: () => fetch('http://localhost:5000/')
+          loader: () => fetch('https://assignment11-node-mongodb-server.vercel.app')
         },
         {
           path: '/services',
           element: <Services></Services>,
-          loader: () => fetch('http://localhost:5000/services')
+          loader: () => fetch('https://assignment11-node-mongodb-server.vercel.app/services')
         },
         {
           path: '/services/:id',
           element: <ServiceDetails></ServiceDetails>,
-          loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
+          loader: ({ params }) => fetch(`https://assignment11-node-mongodb-server.vercel.app/services/${params.id}`),
         },
         {
           path: '/blog',
@@ -60,7 +60,7 @@ const router = createBrowserRouter([
         {
           path: '/addservice',
           element: <PrivateRoutes><AddService></AddService></PrivateRoutes>,
-          loader: () => fetch('http://localhost:5000/services')
+          loader: () => fetch('https://assignment11-node-mongodb-server.vercel.app/services')
         }
       ]
     }

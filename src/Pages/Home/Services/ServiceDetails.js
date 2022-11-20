@@ -13,7 +13,7 @@ const ServiceDetails = () => {
 
 
   useEffect( () => {
-    fetch(`http://localhost:5000/reviews/${id}`)
+    fetch(`https://assignment11-node-mongodb-server.vercel.app/reviews/${id}`)
           .then(res => res.json())
           .then(data => setReviews(data))
   },[id,loader])
@@ -35,7 +35,7 @@ const ServiceDetails = () => {
       s_id: id
     }
 
-    fetch('http://localhost:5000/reviews',{
+    fetch('https://assignment11-node-mongodb-server.vercel.app/reviews',{
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -78,7 +78,7 @@ const ServiceDetails = () => {
                           </div>
                         </form>
 
-                    </div> : <div className="text-end mt-4"><Link to='/login'><button className="btn btn-primary">Please LogIn to add your Review</button></Link></div>
+                    </div> : <div className="text-center mt-4 mb-5"><Link to='/login'><button className="btn btn-primary">Please LogIn to add your Review</button></Link></div>
                 }
             </div>
     </div>

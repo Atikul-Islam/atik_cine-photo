@@ -18,7 +18,7 @@ const AddService = () => {
             description: description,
             pic: photo,
         }
-        fetch(`http://localhost:5000/services`, {
+        fetch(`https://assignment11-node-mongodb-server.vercel.app/services`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
