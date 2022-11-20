@@ -1,10 +1,9 @@
 import React from 'react';
 import toast from 'react-hot-toast';
-import { useLoaderData } from 'react-router-dom';
+import UseTitle from '../../../Layout/Hooks/UseTitle';
 
 const AddService = () => {
-    const services = useLoaderData()
-    const servicesCount = services.length
+    UseTitle('Add Service')
     const handleAddService = (e) => {
         e.preventDefault()
         const form = e.target;
@@ -14,7 +13,7 @@ const AddService = () => {
         const photo = form.photo.value;
 
         const service = {
-            name: name,
+            s_name: name,
             price: price,
             description: description,
             pic: photo,

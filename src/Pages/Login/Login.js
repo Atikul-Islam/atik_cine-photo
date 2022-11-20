@@ -1,10 +1,12 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/Authprovider";
+import UseTitle from "../../Layout/Hooks/UseTitle";
 
 const Login = () => {
     const {signIn} = useContext(AuthContext);
     const [errorMessage, setErrorMessage] = useState('')
+    UseTitle('Login')
     const handleLogin = event =>{
         event.preventDefault();
         const form = event.target;

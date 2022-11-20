@@ -9,14 +9,14 @@ const ServiceDetails = () => {
   const service = useLoaderData();
   const [reviews, setReviews] = useState([]);
   const [loader, setLoader] = useState(true);
-  const {s_id, name, pic, price, description } = service;
-  console.log(pic, description);
+  const {_id:id, s_name, pic, price, description } = service;
+
 
   useEffect( () => {
-    fetch(`http://localhost:5000/reviews/${s_id}`)
+    fetch(`http://localhost:5000/reviews/${id}`)
           .then(res => res.json())
           .then(data => setReviews(data))
-  },[s_id,loader])
+  },[id,loader])
 
   const handleReview = event => {
     event.preventDefault();
@@ -25,12 +25,14 @@ const ServiceDetails = () => {
     const email = form.email.value;
     const comment = form.comment.value;
     const {photo} = user;
+
     const client = {
       name: name,
       email: email,
       comment: comment,
       photo: photo,
-
+      s_name: s_name,
+      s_id: id
     }
 
     fetch('http://localhost:5000/reviews',{
@@ -58,7 +60,7 @@ const ServiceDetails = () => {
           <img src={pic} alt="" />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">{name}</h2>
+          <h2 className="card-title">{s_name}</h2>
           <h3>Price: {price} </h3>
           <p>{description}</p>
         </div>
@@ -69,7 +71,9 @@ const ServiceDetails = () => {
                     user ? <div className="mt-8 mb-20">
                         <h1 className='text-start font-bold text-3xl mb-4'>Add Your Review</h1>
                         <form onSubmit={handleReview}>
-                            <textarea name='message' className="textarea textarea-bordered w-full" placeholder="Type what you wanna say" required></textarea>
+                            <input type="text" name='name' readOnly defaultValue={user?.displayName} className="input w-1/2 mb-3 bg-slate-200" />
+                            <input type="email" name='email' readOnly defaultValue={user?.email} className="input w-1/2 mb-3 bg-slate-200" /><br />
+                            <textarea name='comment' className="textarea textarea-bordered w-full" placeholder="Type what you wanna say" required></textarea>
                             <div className="text-center mt-2">  <button className="btn btn-primary " type='submit'>Add Review</button>
                           </div>
                         </form>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import UseTitle from '../../../Layout/Hooks/UseTitle';
 import About from '../About/About';
 import Banner from '../Banner/Banner';
 import Galary from '../Galary/Galary';
@@ -7,7 +8,8 @@ import ServiceHome from './ServiceHome';
 
 
 const Home = () => {
-    const services = useLoaderData()
+    const services = useLoaderData();
+    UseTitle('Home');
     return (
         <div>
             <Banner></Banner>

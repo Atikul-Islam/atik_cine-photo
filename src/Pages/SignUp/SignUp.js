@@ -2,11 +2,12 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/Authprovider';
+import UseTitle from '../../Layout/Hooks/UseTitle';
 
 const SignUp = () => {
     const {createUser, signInWithGoogle, updateUser} = useContext(AuthContext);
     const [errorMessage, setErrorMessage] = useState('');
-    // console.log(createUser);
+    UseTitle('Register')
     const handleSignUp = event =>{
         event.preventDefault();
         const form = event.target;

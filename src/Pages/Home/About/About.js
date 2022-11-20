@@ -1,7 +1,9 @@
 import React from 'react';
 import about from '../../../assets/images/about.jpg'
+import UseTitle from '../../../Layout/Hooks/UseTitle';
 
 const About = () => {
+  UseTitle('About')
     return (
         <div className="hero min-h-screen bg-base-200 mb-20">
   <div className="hero-content flex-col lg:flex-row">
